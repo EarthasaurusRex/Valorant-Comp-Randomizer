@@ -5,7 +5,7 @@ const agents = [
     { name: 'Iso', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Iso_icon' },
     { name: 'Jett', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Jett_icon' },
     { name: 'Neon', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Neon_icon' },
-    { name: 'Phoenix', role: 'Duelist', display_role: 'Duelist', pseudo_roles: ['Flash Initiator'], is_solo_viable: true, solo_maps: [], icon_name: 'Phoenix_icon' },
+    { name: 'Phoenix', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Phoenix_icon' },
     { name: 'Raze', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Raze_icon' },
     { name: 'Reyna', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Reyna_icon' },
     { name: 'Waylay', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Waylay_icon' },
