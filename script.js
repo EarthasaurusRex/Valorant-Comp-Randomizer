@@ -2,36 +2,36 @@
 
 const agents = [
     // Duelists
-    { name: 'Iso', role: 'Duelist', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Iso_icon' },
-    { name: 'Jett', role: 'Duelist', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Jett_icon' },
-    { name: 'Neon', role: 'Duelist', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Neon_icon' },
-    { name: 'Phoenix', role: 'Duelist', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Phoenix_icon' },
-    { name: 'Raze', role: 'Duelist', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Raze_icon' },
-    { name: 'Reyna', role: 'Duelist', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Reyna_icon' },
-    { name: 'Yoru', role: 'Duelist', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Yoru_icon' },
+    { name: 'Iso', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Iso_icon' },
+    { name: 'Jett', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Jett_icon' },
+    { name: 'Neon', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Neon_icon' },
+    { name: 'Phoenix', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Phoenix_icon' },
+    { name: 'Raze', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Raze_icon' },
+    { name: 'Reyna', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Reyna_icon' },
+    { name: 'Yoru', role: 'Duelist', display_role: 'Duelist', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Yoru_icon' },
 
     // Initiators
-    { name: 'Breach', role: 'Initiator', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Breach_icon' },
-    { name: 'Fade', role: 'Initiator', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Fade_icon' },
-    { name: 'Gekko', role: 'Initiator', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Gekko_icon' },
-    { name: 'KAY/O', role: 'Initiator', pseudo_roles: ['Duelist'], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'KAYO_icon' },
-    { name: 'Skye', role: 'Initiator', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Skye_icon' },
-    { name: 'Sova', role: 'Initiator', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Sova_icon' },
+    { name: 'Breach', role: 'Flash Initiator', display_role: 'Initiator', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Breach_icon' },
+    { name: 'Fade', role: 'Info Initiator', display_role: 'Initiator', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Fade_icon' },
+    { name: 'Gekko', role: 'Flash Initiator', display_role: 'Initiator', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Gekko_icon' },
+    { name: 'KAY/O', role: 'Flash Initiator', display_role: 'Initiator', pseudo_roles: ['Duelist'], is_solo_viable: true, solo_maps: [], icon_name: 'KAYO_icon' },
+    { name: 'Skye', role: 'Flash Initiator', display_role: 'Initiator', pseudo_roles: ['Info Initiator'], is_solo_viable: true, solo_maps: [], icon_name: 'Skye_icon' },
+    { name: 'Sova', role: 'Info Initiator', display_role: 'Initiator', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Sova_icon' },
 
     // Controllers
-    { name: 'Astra', role: 'Controller', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Astra_icon' },
-    { name: 'Brimstone', role: 'Controller', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Brimstone_icon' },
-    { name: 'Clove', role: 'Controller', pseudo_roles: ['Duelist'], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Clove_icon' },
-    { name: 'Harbor', role: 'Controller', pseudo_roles: [], is_solo_controller_viable: false, solo_controller_maps: ['Icebox', 'Breeze'], icon_name: 'Harbor_icon' },
-    { name: 'Omen', role: 'Controller', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Omen_icon' },
-    { name: 'Viper', role: 'Controller', pseudo_roles: ['Sentinel'], is_solo_controller_viable: false, solo_controller_maps: ['Icebox', 'Breeze'], icon_name: 'Viper_icon' },
+    { name: 'Astra', role: 'Controller', display_role: 'Controller', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Astra_icon' },
+    { name: 'Brimstone', role: 'Controller', display_role: 'Controller', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Brimstone_icon' },
+    { name: 'Clove', role: 'Controller', display_role: 'Controller', pseudo_roles: ['Duelist'], is_solo_viable: true, solo_maps: [], icon_name: 'Clove_icon' },
+    { name: 'Harbor', role: 'Controller', display_role: 'Controller', pseudo_roles: [], is_solo_viable: false, solo_maps: ['Icebox', 'Breeze'], icon_name: 'Harbor_icon' },
+    { name: 'Omen', role: 'Controller', display_role: 'Controller', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Omen_icon' },
+    { name: 'Viper', role: 'Controller', display_role: 'Controller', pseudo_roles: ['Sentinel'], is_solo_viable: false, solo_maps: ['Icebox', 'Breeze'], icon_name: 'Viper_icon' },
 
     // Sentinels
-    { name: 'Chamber', role: 'Sentinel', pseudo_roles: ['Duelist'], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Chamber_icon' },
-    { name: 'Cypher', role: 'Sentinel', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Cypher_icon' },
-    { name: 'Deadlock', role: 'Sentinel', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Deadlock_icon' },
-    { name: 'Killjoy', role: 'Sentinel', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Killjoy_icon' },
-    { name: 'Sage', role: 'Sentinel', pseudo_roles: [], is_solo_controller_viable: true, solo_controller_maps: [], icon_name: 'Sage_icon' }
+    { name: 'Chamber', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: ['Duelist'], is_solo_viable: true, solo_maps: [], icon_name: 'Chamber_icon' },
+    { name: 'Cypher', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Cypher_icon' },
+    { name: 'Deadlock', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Deadlock_icon' },
+    { name: 'Killjoy', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Killjoy_icon' },
+    { name: 'Sage', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Sage_icon' }
 ];
 
 function generateTrueRandom() {
@@ -51,8 +51,8 @@ function displayTeam(team) {
     const roleOrder = ['Duelist', 'Initiator', 'Controller', 'Sentinel'];
 
     team.sort((a, b) => {
-        const roleA = roleOrder.indexOf(a.role);
-        const roleB = roleOrder.indexOf(b.role);
+        const roleA = roleOrder.indexOf(a.display_role);
+        const roleB = roleOrder.indexOf(b.display_role);
 
         if (roleA !== roleB) {
             return roleA - roleB;
