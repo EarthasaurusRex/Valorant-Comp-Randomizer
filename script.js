@@ -34,7 +34,7 @@ const agents = [
     { name: 'Deadlock', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Deadlock_icon' },
     { name: 'Killjoy', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Killjoy_icon' },
     { name: 'Sage', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Sage_icon' },
-    { name: 'Vyse', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: ['Info Initiator'], is_solo_viable: true, solo_maps: [], icon_name: 'Vyse_icon' }
+    { name: 'Vyse', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Vyse_icon' }
 ];
 
 function generateTrueRandom() {
