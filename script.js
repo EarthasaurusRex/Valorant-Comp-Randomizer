@@ -37,8 +37,25 @@ const agents = [
     { name: 'Vyse', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Vyse_icon' }
 ];
 
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return array
+}
+
 function generateTrueRandom() {
-    const shuffledAgents = [...agents].sort(() => 0.5 - Math.random());
+    const shuffledAgents = shuffle([...agents]);
     const team = shuffledAgents.slice(0, 5);
     displayTeam(team);
 }
