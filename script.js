@@ -44,10 +44,76 @@ function generateTrueRandom() {
 }
 
 function generateDecentRandom() {
-    // Placeholder for now
-    console.log("Decent Random generation to be implemented.");
-    // For demonstration, just shows the first 5 agents.
-    displayTeam(agents.slice(0,5)); 
+    let availableAgents = [...agents];
+    let team = [];
+    const requiredRoles = ['Duelist', 'Info Initiator', 'Flash Initiator', 'Controller', 'Sentinel'];
+
+    // 1. Get one of each required role
+    for (const role of requiredRoles) {
+        const agentsForRole = availableAgents.filter(a => a.role === role);
+        if (agentsForRole.length > 0) {
+            const selectedAgent = agentsForRole[Math.floor(Math.random() * agentsForRole.length)];
+            team.push(selectedAgent);
+            availableAgents = availableAgents.filter(a => a.name !== selectedAgent.name);
+        }
+    }
+
+    // 2. Fill remaining slots if any role was missing, prioritizing pseudo-roles
+    while (team.length < 5 && availableAgents.length > 0) {
+        const teamRoles = new Set(team.map(a => a.role).concat(...team.map(a => a.pseudo_roles)));
+        const missingRoles = requiredRoles.filter(r => !teamRoles.has(r));
+
+        let addedAgent = false;
+        if (missingRoles.length > 0) {
+            for (const missingRole of missingRoles) {
+                const pseudoAgents = availableAgents.filter(a => a.pseudo_roles.includes(missingRole));
+                if (pseudoAgents.length > 0) {
+                    const selectedAgent = pseudoAgents[Math.floor(Math.random() * pseudoAgents.length)];
+                    team.push(selectedAgent);
+                    availableAgents = availableAgents.filter(a => a.name !== selectedAgent.name);
+                    addedAgent = true;
+                    break; 
+                }
+            }
+        }
+
+        if (!addedAgent) {
+            const randomIndex = Math.floor(Math.random() * availableAgents.length);
+            const randomAgent = availableAgents[randomIndex];
+            team.push(randomAgent);
+            availableAgents = availableAgents.filter(a => a.name !== randomAgent.name);
+        }
+    }
+    
+    // 3. Handle solo controllers
+    const controllers = team.filter(a => a.role === 'Controller');
+    if (controllers.length === 1) {
+        const soloController = controllers[0];
+        if (!soloController.is_solo_viable) {
+            const otherControllers = availableAgents.filter(a => a.role === 'Controller');
+            if (otherControllers.length > 0) {
+                const newController = otherControllers[Math.floor(Math.random() * otherControllers.length)];
+                
+                const nonControllers = team.filter(a => a.role !== 'Controller');
+                if (nonControllers.length > 0) {
+                    const agentToReplace = nonControllers[Math.floor(Math.random() * nonControllers.length)];
+                    team = team.filter(a => a.name !== agentToReplace.name);
+                    team.push(newController);
+                }
+            }
+        }
+    }
+
+    // Ensure team has exactly 5 members
+    while (team.length > 5) {
+        team.pop();
+    }
+    while (team.length < 5 && availableAgents.length > 0) {
+        const randomIndex = Math.floor(Math.random() * availableAgents.length);
+        team.push(availableAgents.splice(randomIndex, 1)[0]);
+    }
+
+    displayTeam(team);
 }
 
 function displayTeam(team) {
