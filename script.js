@@ -66,7 +66,7 @@ function displayTeam(team) {
         const agentDiv = document.createElement('div');
         agentDiv.classList.add('agent');
         agentDiv.innerHTML = `
-            <img src="agent-icons/${agent.name}.png" alt="${agent.name}">
+            <img src="agent-icons/${agent.name}_icon.png" alt="${agent.name}">
             <p>${agent.name}</p>
         `;
         teamContainer.appendChild(agentDiv);
