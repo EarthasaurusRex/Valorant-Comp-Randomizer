@@ -1,0 +1,23 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+#team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.agent {
+    text-align: center;
+}
+
+.agent img {
+    width: 100px;
+    height: 100px;
+}
