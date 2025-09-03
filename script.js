@@ -37,26 +37,48 @@ const agents = [
     { name: 'Vyse', role: 'Sentinel', display_role: 'Sentinel', pseudo_roles: [], is_solo_viable: true, solo_maps: [], icon_name: 'Vyse_icon' }
 ];
 
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  return array
+}
+
 function generateTrueRandom() {
-    const shuffledAgents = [...agents].sort(() => 0.5 - Math.random());
+    let shuffledAgents = [...agents];
+    shuffle(shuffledAgents)
     const team = shuffledAgents.slice(0, 5);
     displayTeam(team);
 }
 
 function generateDecentRandom() {
     let team = [];
-    const requiredRoles = ['Duelist', 'Info Initiator', 'Flash Initiator', 'Controller', 'Sentinel'];
+    const requiredRoles = shuffle(['Duelist', 'Info Initiator', 'Flash Initiator', 'Controller', 'Sentinel']);
 
     let validCompositionFound = false;
     while (!validCompositionFound) {
-        let availableAgents = [...agents]; // Reset available agents for each attempt
-        team = []; // Reset team for each attempt
+        let availableAgents = [...agents];
+        team = [];
 
         // Shuffle available agents once to ensure randomness in selection
-        availableAgents.sort(() => 0.5 - Math.random());
+        shuffle(availableAgents);
 
         // Attempt to fill core roles
         for (const role of requiredRoles) {
+            const roleAlreadyExists = team.filter(a => a.role == role)
+            if (roleAlreadyExists) {
+                continue;
+            }
             const agentsForCurrentRole = availableAgents.filter(a => a.role === role || a.pseudo_roles.includes(role));
 
             if (agentsForCurrentRole.length > 0) {
